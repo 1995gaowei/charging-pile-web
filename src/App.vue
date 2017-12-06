@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header-wrapper></header-wrapper>
-    <router-view/>
+    <div class="main-view">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -20,5 +22,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.main-view {
+  padding: 30px 5%;
+}
+
+p {
+  word-wrap: break-word;
 }
 </style>

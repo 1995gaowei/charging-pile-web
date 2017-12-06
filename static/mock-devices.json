@@ -1,0 +1,43 @@
+[
+    {
+        "groupName": "鼓楼区",
+        "devices": [
+            {
+                "id": 3301,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W"
+            }, {
+                "id": 3302,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W"
+            }, {
+                "id": 3303,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W"
+            }
+        ]
+    }, {
+        "groupName": "栖霞区",
+        "devices": [
+            {
+                "id": 3304,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W"
+            }, {
+                "id": 3305,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W"
+            }, {
+                "id": 3306,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W"
+            }
+        ]
+    }
+]
