@@ -6,17 +6,20 @@
                 "id": 3301,
                 "voltage": "30V",
                 "current": "25A",
-                "power": "750W"
+                "power": "750W",
+                "status": "normal"
             }, {
                 "id": 3302,
                 "voltage": "30V",
                 "current": "25A",
-                "power": "750W"
+                "power": "750W",
+                "status": "warning"
             }, {
                 "id": 3303,
                 "voltage": "30V",
                 "current": "25A",
-                "power": "750W"
+                "power": "750W",
+                "status": "error"
             }
         ]
     }, {
@@ -26,17 +29,8 @@
                 "id": 3304,
                 "voltage": "30V",
                 "current": "25A",
-                "power": "750W"
-            }, {
-                "id": 3305,
-                "voltage": "30V",
-                "current": "25A",
-                "power": "750W"
-            }, {
-                "id": 3306,
-                "voltage": "30V",
-                "current": "25A",
-                "power": "750W"
+                "power": "750W",
+                "status": ""
             }
         ]
     }

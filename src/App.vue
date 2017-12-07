@@ -31,4 +31,23 @@ export default {
 p {
   word-wrap: break-word;
 }
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #2d8cf0;
+    position: relative;
+    top: 1px;
+}
+.normal.dot {
+    background: #19be6b
+}
+.warning.dot {
+    background: #ff9900
+}
+.error.dot {
+    background: #ed3f14
+}
 </style>

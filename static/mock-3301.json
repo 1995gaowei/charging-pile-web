@@ -1,0 +1,38 @@
+{
+    "id": 3301,
+    "voltage": 30,
+    "current": 25,
+    "power": 750,
+    "status": "normal",
+    "communicationStatus": "正常",
+    "ioStatus": "开",
+
+    "VIN": "223300",
+    "maxVoltage": 50,
+    "minVoltage": 20,
+    "maxTemperature": 80,
+    "SOC": "soooc",
+    "finishTime": 150,
+    "voltageNeed": 30,
+    "currentNeed": 25,
+
+    "chargingHistory": [{
+        "id": 1111,
+        "startTime": "2017-12-09 15:20:06",
+        "time": "20min",
+        "amount": 700,
+        "cost": 20
+    }, {
+        "id": 2222,
+        "startTime": "2017-12-09 15:20:06",
+        "time": "20min",
+        "amount": 700,
+        "cost": 20
+    }, {
+        "id": 3333,
+        "startTime": "2017-12-09 15:20:06",
+        "time": "20min",
+        "amount": 700,
+        "cost": 20
+    }]
+}
