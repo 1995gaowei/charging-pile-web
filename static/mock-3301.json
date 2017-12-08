@@ -5,7 +5,8 @@
     "power": 750,
     "status": "normal",
     "communicationStatus": "正常",
-    "ioStatus": "开",
+    "inputStatus": "开",
+    "outputStatus": "关",
 
     "VIN": "223300",
     "maxVoltage": 50,
@@ -15,6 +16,19 @@
     "finishTime": 150,
     "voltageNeed": 30,
     "currentNeed": 25,
+
+    "parameters": {
+        "jianDianJia": 1.1,
+        "fengDianJia": 1.2,
+        "pingDianJia": 1.3,
+        "guDianJia": 1.4,
+
+        "outputVoltage": 50,
+        "outputCurrent": 40,
+        "outputPower": 2000,
+
+        "reportPeroid": 3000
+    },
 
     "chargingHistory": [{
         "id": 1111,

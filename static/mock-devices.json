@@ -31,6 +31,30 @@
                 "current": "25A",
                 "power": "750W",
                 "status": ""
+            }, {
+                "id": 3305,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W",
+                "status": ""
+            }, {
+                "id": 3306,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W",
+                "status": ""
+            }, {
+                "id": 3307,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W",
+                "status": ""
+            },{
+                "id": 3308,
+                "voltage": "30V",
+                "current": "25A",
+                "power": "750W",
+                "status": ""
             }
         ]
     }
