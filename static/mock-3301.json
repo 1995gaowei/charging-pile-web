@@ -1,21 +1,43 @@
 {
     "id": 3301,
-    "voltage": 30,
-    "current": 25,
-    "power": 750,
-    "status": "normal",
-    "communicationStatus": "正常",
-    "inputStatus": "开",
-    "outputStatus": "关",
 
-    "VIN": "223300",
-    "maxVoltage": 50,
-    "minVoltage": 20,
-    "maxTemperature": 80,
-    "SOC": "soooc",
-    "finishTime": 150,
-    "voltageNeed": 30,
-    "currentNeed": 25,
+    "AllPeriodRealTimeData": {
+        "acInputVoltageA": 220,
+        "acInputVoltageB": 220,
+        "acInputVoltageC": 220,
+        "acInputCurrentA": 150,
+        "acInputCurrentB": 150,
+        "acInputCurrentC": 150,
+        "vehicleGuideVoltage": 12,
+        "BMSAuxiliaryVoltage": 12,
+        "ChargerProbeTemperature":  40
+    },
+
+    "chargingOutputData": {
+        "voltage": 12,
+        "current": 12,
+        "moduleMaxTemperature": 80,
+        "chargingVolume": 2,
+        "chargingTimeMs": 60
+    },
+
+    "chargingBMSData": {
+        "batteryVol": 560,
+        "chargingVol": 560,
+        "chargingCur": 150,
+        "bmsVol": 560,
+        "bmsCur": 150,
+        "singleMaxVol": 40,
+        "singleMinVol": 4,
+        "singleMaxTemp": 150,
+        "singleMinTemp": -20,
+        "timeToCharge": 20,
+        "vehSoc": 0.54,
+        "chargingSoc": 0.8,
+        "vehVin": "1G1BL52P7TR115510",
+        "chargingMaxVol": 560,
+        "chargingMaxCur": 150
+    },
 
     "parameters": {
         "jianDianJia": 1.1,
@@ -23,30 +45,49 @@
         "pingDianJia": 1.3,
         "guDianJia": 1.4,
 
-        "outputVoltage": 50,
-        "outputCurrent": 40,
-        "outputPower": 2000,
+        "outputVoltage": 200,
+        "outputCurrent": 20,
+        "outputPower": 4000,
 
         "reportPeroid": 3000
     },
 
+    "control": {
+        "chargingStatus": true,
+        "outputVoltage": 200,
+        "outputCurrent": 20
+    },
+
     "chargingHistory": [{
         "id": 1111,
+        "controlCode": 2120,
+        "VIN": "1G1BL52P7TR115510",
         "startTime": "2017-12-09 15:20:06",
-        "time": "20min",
-        "amount": 700,
+        "time": 20,
+        "volume": 700,
         "cost": 20
     }, {
         "id": 2222,
-        "startTime": "2017-12-09 15:20:06",
-        "time": "20min",
-        "amount": 700,
-        "cost": 20
+        "controlCode": 2121,
+        "VIN": "1G1BL52P7TR115520",
+        "startTime": "2017-12-09 14:20:06",
+        "time": 30,
+        "volume": 800,
+        "cost": 30
     }, {
         "id": 3333,
-        "startTime": "2017-12-09 15:20:06",
-        "time": "20min",
-        "amount": 700,
-        "cost": 20
+        "controlCode": 2122,
+        "VIN": "1G1BL52P7TR115530",
+        "startTime": "2017-12-09 13:20:06",
+        "time": 10,
+        "volume": 300,
+        "cost": 15
+    }],
+
+    "alarms": [{
+        "id": 12113,
+        "type": 0,
+        "startTime": "2017-12-09 13:20:06",
+        "endTime": "2017-12-09 15:20:06"
     }]
 }

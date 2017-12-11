@@ -10,78 +10,124 @@
         <Tabs>
             <TabPane label="实时数据" name="instantData">
                 <div class="segment">
-                    <div class="title">充电设备信息</div>
-                    <div class="info">
+                    <div class="title">全周期实时状态数据</div>
+                    <div class="info" v-if="device.AllPeriodRealTimeData">
                         <li class="item">
-                            <span class="title">电压(V)：</span>
-                            <span class="value">{{ device.voltage }}</span>
+                            <span class="title">输入电压(V)：</span>
+                            <span class="value">{{ device.AllPeriodRealTimeData.acInputVoltageA+', '+device.AllPeriodRealTimeData.acInputVoltageB+', '+device.AllPeriodRealTimeData.acInputVoltageC }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">电流(A)：</span>
-                            <span class="value">{{ device.current }}</span>
+                            <span class="title">输入电流(A)：</span>
+                            <span class="value">{{ device.AllPeriodRealTimeData.acInputCurrentA+', '+device.AllPeriodRealTimeData.acInputCurrentB+', '+device.AllPeriodRealTimeData.acInputCurrentC }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">功率(W)：</span>
-                            <span class="value">{{ device.power }}</span>
+                            <span class="title">车辆引导电压(V)：</span>
+                            <span class="value">{{ device.AllPeriodRealTimeData.vehicleGuideVoltage }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">通讯状态：</span>
-                            <span class="value">{{ device.communicationStatus }}</span>
+                            <span class="title">BMS辅助电源电压：</span>
+                            <span class="value">{{ device.AllPeriodRealTimeData.BMSAuxiliaryVoltage }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">输入状态：</span>
-                            <span class="value">{{ device.inputStatus }}</span>
-                        </li>
-                        <li class="item">
-                            <span class="title">输出状态：</span>
-                            <span class="value">{{ device.outputStatus }}</span>
+                            <span class="title">充电枪插头温度(℃)</span>
+                            <span class="value">{{ device.AllPeriodRealTimeData.ChargerProbeTemperature }}</span>
                         </li>
                     </div>
                 </div>
 
                 <div class="segment">
-                    <div class="title">电动汽车及电池管理系统BMS信息</div>
-                    <div class="info">
+                    <div class="title">充电过程充电桩输出数据</div>
+                    <div class="info" v-if="device.chargingOutputData">
                         <li class="item">
-                            <span class="title">最高电压(V)：</span>
-                            <span class="value">{{ device.maxVoltage }}</span>
+                            <span class="title">输出电压(V)：</span>
+                            <span class="value">{{ device.chargingOutputData.voltage }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">最低电压(V)：</span>
-                            <span class="value">{{ device.minVoltage }}</span>
+                            <span class="title">输出电流(A)：</span>
+                            <span class="value">{{ device.chargingOutputData.current }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">最高温度(℃)：</span>
-                            <span class="value">{{ device.maxTemperature }}</span>
+                            <span class="title">AC/DC最高温度(℃)：</span>
+                            <span class="value">{{ device.chargingOutputData.moduleMaxTemperature }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">车辆VIN：</span>
-                            <span class="value">{{ device.VIN }}</span>
+                            <span class="title">充电电量(kWh)：</span>
+                            <span class="value">{{ device.chargingOutputData.chargingVolume }}</span>
                         </li>
                         <li class="item">
-                            <span class="title">SOC：</span>
-                            <span class="value">{{ device.SOC }}</span>
-                        </li>
-                        <li class="item">
-                            <span class="title">预计完成时间(分)：</span>
-                            <span class="value">{{ device.finishTime }}</span>
-                        </li>
-                        <li class="item">
-                            <span class="title">需求充电电压(V)：</span>
-                            <span class="value">{{ device.voltageNeed }}</span>
-                        </li>
-                        <li class="item">
-                            <span class="title">需求充电电流(A)：</span>
-                            <span class="value">{{ device.currentNeed }}</span>
+                            <span class="title">充电时间(分)：</span>
+                            <span class="value">{{ device.chargingOutputData.chargingTimeMs }}</span>
                         </li>
                     </div>
+                </div>
+
+                <div class="segment">
+                    <div class="title">充电过程BMS数据</div>
+                    <div class="info" v-if="device.chargingBMSData">
+                        <li class="item">
+                            <span class="title">电池总电压(V)：</span>
+                            <span class="value">{{ device.chargingBMSData.batteryVol }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">充电电压(V)：</span>
+                            <span class="value">{{ device.chargingBMSData.chargingVol }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">充电电流(A)：</span>
+                            <span class="value">{{ device.chargingBMSData.chargingCur }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">剩余充电时间(分)：</span>
+                            <span class="value">{{ device.chargingBMSData.timeToCharge }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">车辆Vin：</span>
+                            <span class="value">{{ device.chargingBMSData.vehVin }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">车辆Soc：</span>
+                            <span class="value">{{ device.chargingBMSData.vehSoc }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">开始充电Soc：</span>
+                            <span class="value">{{ device.chargingBMSData.chargingSoc }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">最高允许电压(V)：</span>
+                            <span class="value">{{ device.chargingBMSData.chargingMaxVol }}</span>
+                        </li>
+                        <li class="item">
+                            <span class="title">最高允许电流(A)：</span>
+                            <span class="value">{{ device.chargingBMSData.chargingMaxCur }}</span>
+                        </li>
+                    </div>
+                </div>
+            </TabPane>
+
+            <TabPane label="设备控制" name="control">
+                <div class="segment">
+                    <div class="title">设备控制</div>
+                    <Form v-if="device.control" :model="device.control" :label-width="180">
+                        <FormItem label="启动 / 停止设备">
+                            <i-switch v-model="device.control.chargingStatus" @on-change="changeStatus"></i-switch>
+                        </FormItem>
+                        <FormItem label="输出电压(V)">
+                            <InputNumber :step="10" v-model="device.control.outputVoltage" placeholder="请输入数值"></InputNumber>
+                        </FormItem>
+                        <FormItem label="输出电流(A)">
+                            <InputNumber :step="10" v-model="device.control.outputCurrent" placeholder="请输入数值"></InputNumber>
+                        </FormItem>
+                        <FormItem>
+                            <Button type="primary" @click="remoteControl">更改设置</Button>
+                        </FormItem>
+                    </Form>
                 </div>
             </TabPane>
 
             <TabPane label="参数设置" name="setting">
                 <div class="segment">
                     <div class="title">设备参数设置</div>
-                    <Form v-if="device.parameters" :model="device" :label-width="180">
+                    <Form v-if="device.parameters" :model="device.parameters" :label-width="180">
                         <FormItem label="最大输出功率(W)">
                             <InputNumber :step="10" v-model="device.parameters.outputPower" placeholder="请输入数值"></InputNumber>
                         </FormItem>
@@ -113,10 +159,52 @@
                 </div>
             </TabPane>
 
-            <TabPane label="交易信息" name="dealInfo">
+            <TabPane label="数据记录" name="dataRecord">
                 <div class="segment">
                     <div class="title">充电交易信息</div>
-                    <Table :border="true" :stripe="false" :columns="chargingHistoryCols" :data="device.chargingHistory"></Table>
+                    <!-- <Table :border="true" :stripe="false" :columns="chargingHistoryCols" :data="device.chargingHistory"></Table> -->
+                    <div class="ivu-table-wrapper">
+                        <table cellspacing="0" cellpadding="0" border="0" class="ivu-table ivu-table-border history-table" style="width: 100%;">
+                            <thead>
+                                <th class="ivu-table-cell">启动控制码</th>
+                                <th class="ivu-table-cell">车辆Vin</th>
+                                <th class="ivu-table-cell">充电开始时间</th>
+                                <th class="ivu-table-cell">充电时长(分钟)</th>
+                                <th class="ivu-table-cell">充电电能(W)</th>
+                                <th class="ivu-table-cell">交易金额(￥)</th>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in device.chargingHistory" :key="item.id">
+                                    <td class="ivu-table-cell">{{ item.controlCode }}</td>
+                                    <td class="ivu-table-cell">{{ item.VIN }}</td>
+                                    <td class="ivu-table-cell">{{ item.startTime }}</td>
+                                    <td class="ivu-table-cell">{{ item.time }}</td>
+                                    <td class="ivu-table-cell">{{ item.volume }}</td>
+                                    <td class="ivu-table-cell">{{ item.cost }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="segment">
+                    <div class="title">故障告警记录</div>
+                    <div class="ivu-table-wrapper">
+                        <table cellspacing="0" cellpadding="0" border="0" class="ivu-table ivu-table-border history-table" style="width: 100%;">
+                            <thead>
+                                <th class="ivu-table-cell">故障告警类型</th>
+                                <th class="ivu-table-cell">发生时间</th>
+                                <th class="ivu-table-cell">恢复时间</th>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in device.alarms" :key="item.id">
+                                    <td class="ivu-table-cell">{{ FaultAlarmEnum[item.type] }}</td>
+                                    <td class="ivu-table-cell">{{ item.startTime }}</td>
+                                    <td class="ivu-table-cell">{{ item.endTime }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </TabPane>
         </Tabs>
@@ -125,32 +213,24 @@
 
 <script>
 import api from '@/api'
+import { FaultAlarmEnum } from '@/enums'
 
 export default {
     name: 'device',
     data: function() {	
         return {
             device: {},
-            chargingHistoryCols: [{
-                title: '交易流水号',
-                key: 'id'
-            }, {
-                title: '充电开始时间',
-                key: 'startTime'
-            }, {
-                title: '充电时长(分)',
-                key: 'time'
-            }, {
-                title: '充电电量(kWh)',
-                key: 'amount'
-            }, {
-                title: '交易金额(￥)',
-                key: 'cost'
-            }]
+            FaultAlarmEnum
         }
     },
     methods: {
         modifySetting() {
+
+        },
+        changeStatus(status) {
+
+        },
+        remoteControl() {
 
         }
     },
